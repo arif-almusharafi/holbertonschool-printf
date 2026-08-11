@@ -51,7 +51,7 @@ int pirnt_number (int n)
 
 	if(n < 0)
 	{
-		count += _putchar('-');
+		count += print_char('-');
 		num = -n;
 	}
 	else
@@ -60,9 +60,9 @@ int pirnt_number (int n)
 	if(num / 10)
 	{
 		count += pirnt_number(num / 10);
-		count += _putchar(num % 10 + '0');
+		count += print_char(num % 10 + '0');
 		return count;
 	}
-	_putchar(num + '0');
+	print_char(num + '0');
 	return (count + 1);
 }

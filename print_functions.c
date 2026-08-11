@@ -38,3 +38,31 @@ int print_string(char *str)
 
 	return (i);
 }
+/**
+ * Print_number - Prints an Integer
+ * @n: Integer to Print
+ *
+ * Return: Number of Characters Printed
+ */
+int pirnt_number (int n)
+{
+	int count = 0;
+	unsigned int num;
+
+	if(n < 0)
+	{
+		count += _putchar('-');
+		num = -n;
+	}
+	else
+	num = n;
+
+	if(num / 10)
+	{
+		count += pirnt_number(num / 10);
+		count += _putchar(num % 10 + '0');
+		return count;
+	}
+	_putchar(num + '0');
+	return (count + 1);
+}

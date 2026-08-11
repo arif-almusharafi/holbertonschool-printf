@@ -19,6 +19,9 @@ int handle_conversion(char specifier, va_list *args)
 		return (print_char(va_arg(*args, int)));
 	if (specifier == 's')
 		return (print_string(va_arg(*args, char *)));
+	if (specifier == 'd' || specifier == 'i')
+		return (pirnt_number(va_arg(*args, int)));
+
 	if (specifier == '%')
 		return (print_char('%'));
 
